@@ -268,13 +268,37 @@ class MyForm(QDialog):
             self.lst += "0 + "
 
         # FIXING TWO OPERATOR IN A ROW
-        elif self.lst[-2] == "+" or self.lst[-2] == "*" or self.lst[-2] == "/":
-            pass
+        elif "+" in text or "-" in text or "*" in text or "/" in text:
+            # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
+            if (self.lst[-1] == "1" or self.lst[-1] == "2"
+                    or self.lst[-1] == "3" or self.lst[-1] == "4"
+                    or self.lst[-1] == "5" or self.lst[-1] == "6"
+                    or self.lst[-1] == "7" or self.lst[-1] == "8"
+                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                self.ui.displaycalculator.setText(text + " + ")
+                self.count += 3
+                self.lst += " + "
+
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+                pass
+
+            else:
+                if self.lst[-1] == ".":
+                    pass
+
+                else:
+                    self.ui.displaycalculator.setText(text + " + ")
+                    self.count += 3
+                    self.lst += " + "
 
         else:
-            self.ui.displaycalculator.setText(text + " + ")
-            self.count += 3
-            self.lst += " + "
+            if self.lst[-1] == ".":
+                pass
+
+            else:
+                self.ui.displaycalculator.setText(text + " + ")
+                self.count += 3
+                self.lst += " + "
 
         # # print(len(a))
 
@@ -290,13 +314,37 @@ class MyForm(QDialog):
             self.lst += "0 - "
 
         # FIXING TWO OPERATOR IN A ROW
-        elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
-            pass
+        elif "+" in text or "-" in text or "*" in text or "/" in text:
+            # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
+            if (self.lst[-1] == "1" or self.lst[-1] == "2"
+                    or self.lst[-1] == "3" or self.lst[-1] == "4"
+                    or self.lst[-1] == "5" or self.lst[-1] == "6"
+                    or self.lst[-1] == "7" or self.lst[-1] == "8"
+                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                self.ui.displaycalculator.setText(text + " - ")
+                self.count += 3
+                self.lst += " - "
+
+            elif self.lst[-2] == "-":
+                pass
+
+            else:
+                if self.lst[-1] == ".":
+                    pass
+
+                else:
+                    self.ui.displaycalculator.setText(text + " - ")
+                    self.count += 3
+                    self.lst += " - "
 
         else:
-            self.ui.displaycalculator.setText(text + " - ")
-            self.count += 3
-            self.lst += " - "
+            if self.lst[-1] == ".":
+                pass
+
+            else:
+                self.ui.displaycalculator.setText(text + " - ")
+                self.count += 3
+                self.lst += " - "
 
     def mulnum(self):
         text = self.ui.displaycalculator.text()
@@ -310,13 +358,37 @@ class MyForm(QDialog):
             self.lst += "0 * "
 
         # FIXING TWO OPERATOR IN A ROW
-        elif self.lst[-2] == "+" or self.lst[-2] == "*" or self.lst[-2] == "/":
-            pass
+        elif "+" in text or "-" in text or "*" in text or "/" in text:
+            # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
+            if (self.lst[-1] == "1" or self.lst[-1] == "2"
+                    or self.lst[-1] == "3" or self.lst[-1] == "4"
+                    or self.lst[-1] == "5" or self.lst[-1] == "6"
+                    or self.lst[-1] == "7" or self.lst[-1] == "8"
+                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                self.ui.displaycalculator.setText(text + " * ")
+                self.count += 3
+                self.lst += " * "
+
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+                  pass
+
+            else:
+                if self.lst[-1] == ".":
+                    pass
+
+                else:
+                    self.ui.displaycalculator.setText(text + " * ")
+                    self.count += 3
+                    self.lst += " * "
 
         else:
-            self.ui.displaycalculator.setText(text + " * ")
-            self.count += 3
-            self.lst += " * "
+            if self.lst[-1] == ".":
+                pass
+
+            else:
+                self.ui.displaycalculator.setText(text + " * ")
+                self.count += 3
+                self.lst += " * "
 
     def divnum(self):
         text = self.ui.displaycalculator.text()
@@ -330,13 +402,38 @@ class MyForm(QDialog):
             self.lst += "0 / "
 
         # FIXING TWO OPERATOR IN A ROW
-        elif self.lst[-2] == "+" or self.lst[-2] == "*" or self.lst[-2] == "/":
-            pass
+        # elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+        elif "+" in text or "-" in text or "*" in text or "/" in text:
+            # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
+            if (self.lst[-1] == "1" or self.lst[-1] == "2"
+                    or self.lst[-1] == "3" or self.lst[-1] == "4"
+                    or self.lst[-1] == "5" or self.lst[-1] == "6"
+                    or self.lst[-1] == "7" or self.lst[-1] == "8"
+                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                self.ui.displaycalculator.setText(text + " / ")
+                self.count += 3
+                self.lst += " / "
+
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+                pass
+
+            else:
+                if self.lst[-1] == ".":
+                    pass
+
+                else:
+                    self.ui.displaycalculator.setText(text + " / ")
+                    self.count += 3
+                    self.lst += " / "
 
         else:
-            self.ui.displaycalculator.setText(text + " / ")
-            self.count += 3
-            self.lst += " / "
+            if self.lst[-1] == ".":
+                pass
+
+            else:
+                self.ui.displaycalculator.setText(text + " / ")
+                self.count += 3
+                self.lst += " / "
 
     def result(self):
 
@@ -350,6 +447,10 @@ class MyForm(QDialog):
         """ Make the lst start with the previous ans"""
         if self.ui.displaycalculator.text() == "0":
             self.lst = ""
+
+        # elif self.ui.displaycalculator.text()[0] == "-":
+        #     self.lst += "-"
+        #     self.count += 1
 
         else:
             self.lst = f"{self.ui.displaycalculator.text()}"
@@ -367,6 +468,8 @@ class MyForm(QDialog):
         if self.count > 1:
             # print(f"Before: {self.count}")
             last = self.ui.displaycalculator.text()
+
+            """ Delete all the operator """
             if last[-1] == " ":
                 last = last[:-3]
                 self.count -= 3
