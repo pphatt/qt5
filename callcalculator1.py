@@ -528,12 +528,6 @@ class MyForm(QDialog):
         self.lst += " ".join(wordlist)
         self.count = len(self.lst)
 
-    # def geometry(self):
-    #     pass
-    #
-    # def algo(self):
-    #     pass
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
