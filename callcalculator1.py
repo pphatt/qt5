@@ -26,6 +26,8 @@ class MyForm(QDialog):
         self.ui.subsymbol.clicked.connect(self.subnum)
         self.ui.mulsymbol.clicked.connect(self.mulnum)
         self.ui.divsymbol.clicked.connect(self.divnum)
+        self.ui.parentheses1.clicked.connect(self.bracketopen)
+        self.ui.parentheses2.clicked.connect(self.bracketclose)
         self.ui.equalsymbol.clicked.connect(self.result)
 
         self.ui.delsymbol.clicked.connect(self.delnum)
@@ -48,6 +50,9 @@ class MyForm(QDialog):
     """ Tạo 1 string lst để chứa history and use for display data from history """
     # cũng như cái count ở trên
     lst = ""
+
+    # parentheses bug
+    parentheses_sto = ""
 
     # print(f"Basic: {count}")
 
@@ -527,6 +532,92 @@ class MyForm(QDialog):
         self.count = 0
         self.lst += " ".join(wordlist)
         self.count = len(self.lst)
+
+    def bracketopen(self):
+
+        text = self.ui.displaycalculator.text()
+
+        if len(self.lst) == 0:
+            self.ui.displaycalculator.setText("(")
+            self.count += 1
+            self.lst += "("
+            self.parentheses_sto += "("
+
+        elif len(self.lst) > 0:
+            # self.ui.displaycalculator.setText(text + "(")
+            # self.count += 1
+            # self.lst += "("
+
+            if (self.lst[-1] == "1" or self.lst[-1] == "2"
+                    or self.lst[-1] == "3" or self.lst[-1] == "4"
+                    or self.lst[-1] == "5" or self.lst[-1] == "6"
+                    or self.lst[-1] == "7" or self.lst[-1] == "8"
+                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+
+                self.ui.displaycalculator.setText(text + " * (")
+                self.count += 4
+                self.lst += " * ("
+                self.parentheses_sto += "("
+
+            elif self.lst[-1] == ".":
+                pass
+
+            else:
+                self.ui.displaycalculator.setText(text + "(")
+                self.count += 1
+                self.lst += "("
+                self.parentheses_sto += "("
+
+        # print(self.parentheses_sto)
+        # print(len(self.parentheses_sto))
+
+    def bracketclose(self):
+
+        text = self.ui.displaycalculator.text()
+
+        if len(self.lst) == 0:
+            pass
+
+        elif len(self.parentheses_sto) != 0 and self.parentheses_sto[-1] == "(":
+
+            if (self.lst[-2] == "+" or self.lst[-2] == "-"
+                    or self.lst[-2] == "*" or self.lst[-2] == "/"):
+
+                self.lst = self.lst[:-3]
+                self.lst += ")"
+                self.ui.displaycalculator.setText(self.lst)
+                self.count += -2
+                self.parentheses_sto += ")"
+
+                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                    self.parentheses_sto = self.parentheses_sto[:-3]
+
+            elif self.lst[-1] == ".":
+                self.lst = self.lst[:-1]
+                self.lst += ")"
+                self.ui.displaycalculator.setText(self.lst)
+                self.parentheses_sto += ")"
+
+                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                    self.parentheses_sto = self.parentheses_sto[:-3]
+
+            else:
+                self.ui.displaycalculator.setText(text + ")")
+                self.count += 1
+                self.lst += ")"
+                self.parentheses_sto += ")"
+                print(self.parentheses_sto)
+                print(len(self.parentheses_sto))
+
+                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                    self.parentheses_sto = self.parentheses_sto[:-2]
+
+        else:
+            pass
+
+
+        print(self.parentheses_sto)
+        print(len(self.parentheses_sto))
 
 
 if __name__ == "__main__":

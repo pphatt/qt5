@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Dev\Python\Stuff\Qt5\Project\calculator1.ui'
+# Form implementation generated from reading ui file 'D:\Dev\Python\Qt5\Project\calculator1.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -182,6 +182,12 @@ class Ui_Dialog(object):
         self.minusbutton.setFont(font)
         self.minusbutton.setObjectName("minusbutton")
         self.gridLayout.addWidget(self.minusbutton, 5, 0, 1, 1)
+        self.parentheses1 = QtWidgets.QPushButton(self.widget)
+        self.parentheses1.setObjectName("parentheses1")
+        self.gridLayout.addWidget(self.parentheses1, 6, 2, 1, 1)
+        self.parentheses2 = QtWidgets.QPushButton(self.widget)
+        self.parentheses2.setObjectName("parentheses2")
+        self.gridLayout.addWidget(self.parentheses2, 6, 3, 1, 1)
         self.gridLayout_5.addWidget(self.widget, 1, 0, 1, 1)
         self.widget_2 = QtWidgets.QWidget(Dialog)
         self.widget_2.setObjectName("widget_2")
@@ -235,6 +241,8 @@ class Ui_Dialog(object):
         self.button9.setText(_translate("Dialog", "9"))
         self.button0.setText(_translate("Dialog", "0"))
         self.minusbutton.setText(_translate("Dialog", "+/-"))
+        self.parentheses1.setText(_translate("Dialog", "("))
+        self.parentheses2.setText(_translate("Dialog", ")"))
         self.delbutton.setText(_translate("Dialog", "Delete"))
         self.delallbutton.setText(_translate("Dialog", "Delete All"))
 
