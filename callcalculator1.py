@@ -601,10 +601,11 @@ class MyForm(QDialog):
         self.sqr_sto = ""
 
         self.count = 0
-        self.count = len(self.lst)
 
         self.lst += " ".join(wordlist)
         self.sqr_sto += " ".join(wordlist)
+
+        self.count = len(self.lst)
 
     def bracketopen(self):
 
