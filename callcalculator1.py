@@ -572,7 +572,7 @@ class MyForm(QDialog):
             # print("Back to 0")
 
         # print(self.lst)
-        print(self.count)
+        # print(self.count)
 
     def delhistory(self):
         self.ui.historylistwidget.takeItem(self.ui.historylistwidget.currentRow())
