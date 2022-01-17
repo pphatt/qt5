@@ -284,7 +284,7 @@ class MyForm(QDialog):
                 self.count += 3
                 self.lst += " + "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
                 pass
 
             else:
@@ -374,7 +374,7 @@ class MyForm(QDialog):
                 self.count += 3
                 self.lst += " * "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
                 pass
 
             else:
@@ -419,7 +419,7 @@ class MyForm(QDialog):
                 self.count += 3
                 self.lst += " / "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
                 pass
 
             else:
@@ -444,23 +444,29 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        ans = str(eval(text))
-        self.ui.displaycalculator.setText(ans)
-
-        self.ui.historylistwidget.addItem(f"{self.lst} = {self.ui.displaycalculator.text()}")
-
-        """ Make the lst start with the previous ans"""
-        if self.ui.displaycalculator.text() == "0":
-            self.lst = ""
-            self.count = 0
-
-        # elif self.ui.displaycalculator.text()[0] == "-":
-        #     self.lst += "-"
-        #     self.count += 1
+        if len(self.parentheses_sto) > 0:
+            pass
 
         else:
-            self.lst = f"{self.ui.displaycalculator.text()}"
-            self.count = len(self.ui.displaycalculator.text())
+
+            ans = str(eval(text))
+
+            self.ui.displaycalculator.setText(ans)
+
+            self.ui.historylistwidget.addItem(f"{self.lst} = {self.ui.displaycalculator.text()}")
+
+            """ Make the lst start with the previous ans"""
+            if self.ui.displaycalculator.text() == "0":
+                self.lst = ""
+                self.count = 0
+
+            # elif self.ui.displaycalculator.text()[0] == "-":
+            #     self.lst += "-"
+            #     self.count += 1
+
+            else:
+                self.lst = f"{self.ui.displaycalculator.text()}"
+                self.count = len(self.ui.displaycalculator.text())
 
     def delnum(self):
         self.ui.displaycalculator.setText("0")
@@ -559,6 +565,12 @@ class MyForm(QDialog):
                 self.lst += " * ("
                 self.parentheses_sto += "("
 
+            elif self.lst[-1] == ")":
+                self.ui.displaycalculator.setText(text + " * (")
+                self.count += 4
+                self.lst += " * ("
+                self.parentheses_sto += "("
+
             elif self.lst[-1] == ".":
                 pass
 
@@ -568,8 +580,8 @@ class MyForm(QDialog):
                 self.lst += "("
                 self.parentheses_sto += "("
 
-        # print(self.parentheses_sto)
-        # print(len(self.parentheses_sto))
+        # print(self.lst[-1])
+        # print(len(self.lst))
 
     def bracketclose(self):
 
@@ -606,8 +618,8 @@ class MyForm(QDialog):
                 self.count += 1
                 self.lst += ")"
                 self.parentheses_sto += ")"
-                print(self.parentheses_sto)
-                print(len(self.parentheses_sto))
+                # print(self.parentheses_sto)
+                # print(len(self.parentheses_sto))
 
                 if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
                     self.parentheses_sto = self.parentheses_sto[:-2]
@@ -616,8 +628,8 @@ class MyForm(QDialog):
             pass
 
 
-        print(self.parentheses_sto)
-        print(len(self.parentheses_sto))
+        # print(self.parentheses_sto)
+        # print(len(self.parentheses_sto))
 
 
 if __name__ == "__main__":
