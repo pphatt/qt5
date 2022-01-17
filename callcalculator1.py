@@ -492,7 +492,7 @@ class MyForm(QDialog):
         else:
             # print(self.lst == text)
             # print(self.lst == self.sqr_sto)
-            print(text == self.sqr_sto)
+            # print(text == self.sqr_sto)
             # print(self.lst)
             # print(self.sqr_sto)
             # print(text)
