@@ -489,6 +489,9 @@ class MyForm(QDialog):
         if len(self.parentheses_sto) > 0:
             pass
 
+        if len(self.lst) == 0:
+            pass
+        
         else:
             # print(self.lst == text)
             # print(self.lst == self.sqr_sto)
