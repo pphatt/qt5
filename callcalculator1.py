@@ -692,6 +692,18 @@ class MyForm(QDialog):
                 if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
                     self.parentheses_sto = self.parentheses_sto[:-3]
 
+            elif self.lst[-1] == "(":
+
+                self.lst += "0)"
+                self.sqr_sto += "0)"
+                self.count += 2
+                self.parentheses_sto += ")"
+
+                self.ui.displaycalculator.setText(self.lst)
+
+                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                    self.parentheses_sto = self.parentheses_sto[:-3]
+
             else:
 
                 self.ui.displaycalculator.setText(text + ")")
