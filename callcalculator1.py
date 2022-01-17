@@ -549,6 +549,13 @@ class MyForm(QDialog):
                 self.lst = self.lst[:-3]
                 self.sqr_sto = self.sqr_sto[:-3]
 
+            elif self.lst[-2] == "-" and self.count == 2:
+                last = last[:-2]
+                last += "0"
+                self.count = 0
+                self.lst = ""
+                self.sqr_sto = ""
+
             else:
                 last = last[:-1]
                 self.count -= 1
@@ -565,7 +572,7 @@ class MyForm(QDialog):
             # print("Back to 0")
 
         # print(self.lst)
-        # print(self.count)
+        print(self.count)
 
     def delhistory(self):
         self.ui.historylistwidget.takeItem(self.ui.historylistwidget.currentRow())
