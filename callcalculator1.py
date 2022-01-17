@@ -550,9 +550,6 @@ class MyForm(QDialog):
             self.parentheses_sto += "("
 
         elif len(self.lst) > 0:
-            # self.ui.displaycalculator.setText(text + "(")
-            # self.count += 1
-            # self.lst += "("
 
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
                     or self.lst[-1] == "3" or self.lst[-1] == "4"
@@ -579,9 +576,6 @@ class MyForm(QDialog):
                 self.count += 1
                 self.lst += "("
                 self.parentheses_sto += "("
-
-        # print(self.lst[-1])
-        # print(len(self.lst))
 
     def bracketclose(self):
 
@@ -618,18 +612,12 @@ class MyForm(QDialog):
                 self.count += 1
                 self.lst += ")"
                 self.parentheses_sto += ")"
-                # print(self.parentheses_sto)
-                # print(len(self.parentheses_sto))
 
                 if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
                     self.parentheses_sto = self.parentheses_sto[:-2]
 
         else:
             pass
-
-
-        # print(self.parentheses_sto)
-        # print(len(self.parentheses_sto))
 
 
 if __name__ == "__main__":
