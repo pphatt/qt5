@@ -491,8 +491,8 @@ class MyForm(QDialog):
 
         if len(self.lst) == 0:
             pass
-        
-        else:
+
+        elif len(self.parentheses_sto) == 0:
             # print(self.lst == text)
             # print(self.lst == self.sqr_sto)
             # print(text == self.sqr_sto)
@@ -697,18 +697,20 @@ class MyForm(QDialog):
             elif (self.lst[-2] == "+" or self.lst[-2] == "-"
                     or self.lst[-2] == "*" or self.lst[-2] == "/"):
 
-                self.lst = self.lst[:-3]
-                self.sqr_sto = self.sqr_sto[:-3]
+                # self.lst = self.lst[:-3]
+                # self.sqr_sto = self.sqr_sto[:-3]
+                #
+                # self.lst += ")"
+                # self.sqr_sto += ")"
+                # self.parentheses_sto += ")"
+                #
+                # self.ui.displaycalculator.setText(self.lst)
+                # self.count += -2
+                #
+                # if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                #     self.parentheses_sto = self.parentheses_sto[:-2]
 
-                self.lst += ")"
-                self.sqr_sto += ")"
-                self.parentheses_sto += ")"
-
-                self.ui.displaycalculator.setText(self.lst)
-                self.count += -2
-
-                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
-                    self.parentheses_sto = self.parentheses_sto[:-2]
+                pass
 
             elif self.lst[-1] == ".":
 
