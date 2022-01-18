@@ -235,7 +235,7 @@ class Ui_Dialog(object):
         self.parentheses2.setText(_translate("Dialog", ")"))
         self.parentheses1.setText(_translate("Dialog", "("))
         self.equalsymbol.setText(_translate("Dialog", "="))
-        self.squarenum.setText(_translate("Dialog", "X^2"))
+        self.squarenum.setText(_translate("Dialog", "X^Y"))
         self.delbutton.setText(_translate("Dialog", "Delete"))
         self.delallbutton.setText(_translate("Dialog", "Delete All"))
 

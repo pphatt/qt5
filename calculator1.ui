@@ -342,7 +342,7 @@
         <item row="1" column="0">
          <widget class="QPushButton" name="squarenum">
           <property name="text">
-           <string>X^2</string>
+           <string>X^Y</string>
           </property>
          </widget>
         </item>
