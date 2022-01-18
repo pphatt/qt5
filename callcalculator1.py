@@ -664,6 +664,8 @@ class MyForm(QDialog):
                 self.sqr_sto += "("
                 self.parentheses_sto += "("
 
+        print(self.parentheses_sto)
+
     def bracketclose(self):
 
         text = self.ui.displaycalculator.text()
@@ -673,7 +675,19 @@ class MyForm(QDialog):
 
         elif len(self.parentheses_sto) != 0 and self.parentheses_sto[-1] == "(":
 
-            if (self.lst[-2] == "+" or self.lst[-2] == "-"
+            if self.lst[-1] == "(":
+
+                self.lst += "0)"
+                self.sqr_sto += "0)"
+                self.count += 2
+                self.parentheses_sto += ")"
+
+                self.ui.displaycalculator.setText(self.lst)
+
+                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
+                    self.parentheses_sto = self.parentheses_sto[:-2]
+
+            elif (self.lst[-2] == "+" or self.lst[-2] == "-"
                     or self.lst[-2] == "*" or self.lst[-2] == "/"):
 
                 self.lst = self.lst[:-3]
@@ -687,7 +701,7 @@ class MyForm(QDialog):
                 self.count += -2
 
                 if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
-                    self.parentheses_sto = self.parentheses_sto[:-3]
+                    self.parentheses_sto = self.parentheses_sto[:-2]
 
             elif self.lst[-1] == ".":
 
@@ -701,19 +715,7 @@ class MyForm(QDialog):
                 self.ui.displaycalculator.setText(self.lst)
 
                 if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
-                    self.parentheses_sto = self.parentheses_sto[:-3]
-
-            elif self.lst[-1] == "(":
-
-                self.lst += "0)"
-                self.sqr_sto += "0)"
-                self.count += 2
-                self.parentheses_sto += ")"
-
-                self.ui.displaycalculator.setText(self.lst)
-
-                if self.parentheses_sto[-2] == "(" and self.parentheses_sto[-1] == ")":
-                    self.parentheses_sto = self.parentheses_sto[:-3]
+                    self.parentheses_sto = self.parentheses_sto[:-2]
 
             else:
 
@@ -729,6 +731,8 @@ class MyForm(QDialog):
 
         else:
             pass
+
+        # print(self.parentheses_sto)
 
     def square(self):
 
