@@ -581,6 +581,7 @@ class MyForm(QDialog):
         self.ui.historylistwidget.clear()
 
     def makefloat(self):
+
         text = self.ui.displaycalculator.text()
         deximal_num = text.split(" ")
 
@@ -588,6 +589,7 @@ class MyForm(QDialog):
             pass
 
         else:
+
             self.ui.displaycalculator.setText(text + ".")
             self.count += 1
             self.lst += "."
@@ -600,11 +602,14 @@ class MyForm(QDialog):
 
     def copying_data(self):
         # self.ui.testlable.clear()
+
         contants = ""
         contants += self.ui.historylistwidget.currentItem().text()
+
         wordlist = contants.split(" ")
         wordlist.remove("=")
         wordlist.pop()
+
         self.ui.displaycalculator.setText(" ".join(wordlist))
 
         self.lst = ""
@@ -646,6 +651,7 @@ class MyForm(QDialog):
                 self.parentheses_sto += "("
 
             elif self.lst[-1] == ")":
+
                 self.ui.displaycalculator.setText(text + " * (")
                 self.count += 4
 
@@ -657,6 +663,7 @@ class MyForm(QDialog):
                 pass
 
             else:
+
                 self.ui.displaycalculator.setText(text + "(")
                 self.count += 1
 
@@ -664,7 +671,7 @@ class MyForm(QDialog):
                 self.sqr_sto += "("
                 self.parentheses_sto += "("
 
-        print(self.parentheses_sto)
+        # print(self.parentheses_sto)
 
     def bracketclose(self):
 
