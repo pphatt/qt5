@@ -303,16 +303,17 @@ class MyForm(QDialog):
         elif "+" in text or "-" in text or "*" in text or "/" in text:
             # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
-                    or self.lst[-1] == "3" or self.lst[-1] == "4"
-                    or self.lst[-1] == "5" or self.lst[-1] == "6"
-                    or self.lst[-1] == "7" or self.lst[-1] == "8"
-                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "3" or self.lst[-1] == "4"
+                or self.lst[-1] == "5" or self.lst[-1] == "6"
+                or self.lst[-1] == "7" or self.lst[-1] == "8"
+                or self.lst[-1] == "9") and self.lst[-1] != ".":
                 self.ui.displaycalculator.setText(text + " + ")
                 self.count += 3
                 self.lst += " + "
                 self.sqr_sto += " + "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[
+                -1] == "(":
                 pass
 
             else:
@@ -353,10 +354,10 @@ class MyForm(QDialog):
         elif "+" in text or "-" in text or "*" in text or "/" in text:
             # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
-                    or self.lst[-1] == "3" or self.lst[-1] == "4"
-                    or self.lst[-1] == "5" or self.lst[-1] == "6"
-                    or self.lst[-1] == "7" or self.lst[-1] == "8"
-                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "3" or self.lst[-1] == "4"
+                or self.lst[-1] == "5" or self.lst[-1] == "6"
+                or self.lst[-1] == "7" or self.lst[-1] == "8"
+                or self.lst[-1] == "9") and self.lst[-1] != ".":
                 self.ui.displaycalculator.setText(text + " - ")
                 self.count += 3
                 self.lst += " - "
@@ -401,16 +402,17 @@ class MyForm(QDialog):
         elif "+" in text or "-" in text or "*" in text or "/" in text:
             # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
-                    or self.lst[-1] == "3" or self.lst[-1] == "4"
-                    or self.lst[-1] == "5" or self.lst[-1] == "6"
-                    or self.lst[-1] == "7" or self.lst[-1] == "8"
-                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "3" or self.lst[-1] == "4"
+                or self.lst[-1] == "5" or self.lst[-1] == "6"
+                or self.lst[-1] == "7" or self.lst[-1] == "8"
+                or self.lst[-1] == "9") and self.lst[-1] != ".":
                 self.ui.displaycalculator.setText(text + " * ")
                 self.count += 3
                 self.lst += " * "
                 self.sqr_sto += " * "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[
+                -1] == "(":
                 pass
 
             else:
@@ -450,16 +452,17 @@ class MyForm(QDialog):
         elif "+" in text or "-" in text or "*" in text or "/" in text:
             # FIXING THAT IF THAT IS A NEGATIVE OPERATOR OR A NEGATIVE NUMBER
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
-                    or self.lst[-1] == "3" or self.lst[-1] == "4"
-                    or self.lst[-1] == "5" or self.lst[-1] == "6"
-                    or self.lst[-1] == "7" or self.lst[-1] == "8"
-                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "3" or self.lst[-1] == "4"
+                or self.lst[-1] == "5" or self.lst[-1] == "6"
+                or self.lst[-1] == "7" or self.lst[-1] == "8"
+                or self.lst[-1] == "9") and self.lst[-1] != ".":
                 self.ui.displaycalculator.setText(text + " / ")
                 self.count += 3
                 self.lst += " / "
                 self.sqr_sto += " / "
 
-            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[-1] == "(":
+            elif self.lst[-2] == "+" or self.lst[-2] == "-" or self.lst[-2] == "*" or self.lst[-2] == "/" or self.lst[
+                -1] == "(":
                 pass
 
             else:
@@ -638,10 +641,10 @@ class MyForm(QDialog):
         elif len(self.lst) > 0:
 
             if (self.lst[-1] == "1" or self.lst[-1] == "2"
-                    or self.lst[-1] == "3" or self.lst[-1] == "4"
-                    or self.lst[-1] == "5" or self.lst[-1] == "6"
-                    or self.lst[-1] == "7" or self.lst[-1] == "8"
-                    or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "3" or self.lst[-1] == "4"
+                or self.lst[-1] == "5" or self.lst[-1] == "6"
+                or self.lst[-1] == "7" or self.lst[-1] == "8"
+                or self.lst[-1] == "9") and self.lst[-1] != ".":
 
                 self.ui.displaycalculator.setText(text + " * (")
                 self.count += 4
@@ -695,7 +698,7 @@ class MyForm(QDialog):
                     self.parentheses_sto = self.parentheses_sto[:-2]
 
             elif (self.lst[-2] == "+" or self.lst[-2] == "-"
-                    or self.lst[-2] == "*" or self.lst[-2] == "/"):
+                  or self.lst[-2] == "*" or self.lst[-2] == "/"):
 
                 # self.lst = self.lst[:-3]
                 # self.sqr_sto = self.sqr_sto[:-3]
