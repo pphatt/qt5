@@ -64,7 +64,7 @@ class MyForm(QDialog):
     def num1(self):
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -87,7 +87,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -107,7 +107,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -127,7 +127,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -147,7 +147,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -167,7 +167,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -187,7 +187,7 @@ class MyForm(QDialog):
 
         text = self.ui.displaycalculator.text()
 
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -206,7 +206,7 @@ class MyForm(QDialog):
     def num8(self):
 
         text = self.ui.displaycalculator.text()
-        if self.lst[-1] == ")":
+        if text[-1] == ")":
             pass
 
         else:
@@ -225,7 +225,8 @@ class MyForm(QDialog):
     def num9(self):
 
         text = self.ui.displaycalculator.text()
-        if self.lst[-1] == ")":
+
+        if text[-1] == ")":
             pass
 
         else:
@@ -249,7 +250,8 @@ class MyForm(QDialog):
     def num0(self):
 
         text = self.ui.displaycalculator.text()
-        if self.lst[-1] == ")":
+
+        if text[-1] == ")":
             pass
 
         else:
