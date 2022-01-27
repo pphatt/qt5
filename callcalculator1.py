@@ -267,7 +267,6 @@ class MyForm(QDialog):
                 self.sqr_sto += "0"
 
     def addnum(self):
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
         # self.ui.displaycalculator.setText(text + " + ")
         # self.count += 3
