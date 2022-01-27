@@ -307,6 +307,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
                 or self.lst[-1] == "9") and self.lst[-1] != ".":
+
                 self.ui.displaycalculator.setText(text + " + ")
                 self.count += 3
                 self.lst += " + "
@@ -358,6 +359,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
                 or self.lst[-1] == "9") and self.lst[-1] != ".":
+
                 self.ui.displaycalculator.setText(text + " - ")
                 self.count += 3
                 self.lst += " - "
@@ -406,6 +408,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
                 or self.lst[-1] == "9") and self.lst[-1] != ".":
+
                 self.ui.displaycalculator.setText(text + " * ")
                 self.count += 3
                 self.lst += " * "
@@ -456,6 +459,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
                 or self.lst[-1] == "9") and self.lst[-1] != ".":
+                
                 self.ui.displaycalculator.setText(text + " / ")
                 self.count += 3
                 self.lst += " / "
