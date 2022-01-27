@@ -62,204 +62,184 @@ class MyForm(QDialog):
     # print(f"Basic: {count}")
 
     def num1(self):
-        """ dòng này là để mình convert nhũng gì ở trên lable aka ở trên displaycalculator thành string """
         text = self.ui.displaycalculator.text()
-        # print(type(text)) -> <class: str>
 
-        """ check giá trị đầu tiên trên màn hình có phải là số 0 không ?
-            Nếu phải thì thay thế số đó với các số nhập từ "bàn phím". """
+        if self.lst[-1] == ")":
+            pass
 
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("1")
+                self.count += 1
+                self.lst += "1"
+                self.sqr_sto += "1"
 
-        """ WASTED """
-        # if text[0] == "0":
-        #     self.ui.displaycalculator.setText("1")
-        #     self.count += 1
-        #     self.lst += "1"
-        #
-        # else:
-        #     self.ui.displaycalculator.setText(text + "1")
-        #     self.count += 1
-        #     self.lst += "1"
-
-        """ FIXING BUG OF BEING 0 + SOMETHING """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("1")
-            self.count += 1
-            self.lst += "1"
-            self.sqr_sto += "1"
-
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "1")
-            self.count += 1
-            self.lst += "1"
-            self.sqr_sto += "1"
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "1")
+                self.count += 1
+                self.lst += "1"
+                self.sqr_sto += "1"
 
         # a = self.lst.split(" ")
         # print(a)
 
     def num2(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        # if text[0] == "0":
-        #     self.ui.displaycalculator.setText("2")
-        #     self.count += 1
-        #     self.lst += "2"
-        #
-        # else:
-        #     self.ui.displaycalculator.setText(text + "2")
-        #     self.count += 1
-        #     self.lst += "2"
+        if self.lst[-1] == ")":
+            pass
 
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("2")
-            self.count += 1
-            self.lst += "2"
-            self.sqr_sto += "2"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("2")
+                self.count += 1
+                self.lst += "2"
+                self.sqr_sto += "2"
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "2")
-            self.count += 1
-            self.lst += "2"
-            self.sqr_sto += "2"
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "2")
+                self.count += 1
+                self.lst += "2"
+                self.sqr_sto += "2"
 
     def num3(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("3")
-            self.count += 1
-            self.lst += "3"
-            self.sqr_sto += "3"
+        if self.lst[-1] == ")":
+            pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "3")
-            self.count += 1
-            self.lst += "3"
-            self.sqr_sto += "3"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("3")
+                self.count += 1
+                self.lst += "3"
+                self.sqr_sto += "3"
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "3")
+                self.count += 1
+                self.lst += "3"
+                self.sqr_sto += "3"
 
     def num4(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("4")
-            self.count += 1
-            self.lst += "4"
-            self.sqr_sto += "4"
+        if self.lst[-1] == ")":
+            pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "4")
-            self.count += 1
-            self.lst += "4"
-            self.sqr_sto += "4"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("4")
+                self.count += 1
+                self.lst += "4"
+                self.sqr_sto += "4"
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "4")
+                self.count += 1
+                self.lst += "4"
+                self.sqr_sto += "4"
 
     def num5(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("5")
-            self.count += 1
-            self.lst += "5"
-            self.sqr_sto += "5"
+        if self.lst[-1] == ")":
+            pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "5")
-            self.count += 1
-            self.lst += "5"
-            self.sqr_sto += "5"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("5")
+                self.count += 1
+                self.lst += "5"
+                self.sqr_sto += "5"
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "5")
+                self.count += 1
+                self.lst += "5"
+                self.sqr_sto += "5"
 
     def num6(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("6")
-            self.count += 1
-            self.lst += "6"
-            self.sqr_sto += "6"
+        if self.lst[-1] == ")":
+            pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "6")
-            self.count += 1
-            self.lst += "6"
-            self.sqr_sto += "6"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("6")
+                self.count += 1
+                self.lst += "6"
+                self.sqr_sto += "6"
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "6")
+                self.count += 1
+                self.lst += "6"
+                self.sqr_sto += "6"
 
     def num7(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("7")
-            self.count += 1
-            self.lst += "7"
-            self.sqr_sto += "7"
+        if self.lst[-1] == ")":
+            pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "7")
-            self.count += 1
-            self.lst += "7"
-            self.sqr_sto += "7"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("7")
+                self.count += 1
+                self.lst += "7"
+                self.sqr_sto += "7"
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "7")
+                self.count += 1
+                self.lst += "7"
+                self.sqr_sto += "7"
 
     def num8(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
+        if self.lst[-1] == ")":
+            pass
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("8")
-            self.count += 1
-            self.lst += "8"
-            self.sqr_sto += "8"
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("8")
+                self.count += 1
+                self.lst += "8"
+                self.sqr_sto += "8"
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "8")
-            self.count += 1
-            self.lst += "8"
-            self.sqr_sto += "8"
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "8")
+                self.count += 1
+                self.lst += "8"
+                self.sqr_sto += "8"
 
     def num9(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
+        if self.lst[-1] == ")":
+            pass
 
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
+        else:
+            if len(self.lst) == 0:
+                self.ui.displaycalculator.setText("9")
+                self.count += 1
+                self.lst += "9"
+                self.sqr_sto += "9"
 
-        if len(self.lst) == 0:
-            self.ui.displaycalculator.setText("9")
-            self.count += 1
-            self.lst += "9"
-            self.sqr_sto += "9"
-
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "9")
-            self.count += 1
-            self.lst += "9"
-            self.sqr_sto += "9"
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "9")
+                self.count += 1
+                self.lst += "9"
+                self.sqr_sto += "9"
 
         # a = self.lst.split(" ")
         # test = []
@@ -268,23 +248,23 @@ class MyForm(QDialog):
 
     def num0(self):
 
-        """ cũng giống 1 """
         text = self.ui.displaycalculator.text()
-
-        """ cũng giống 1 """
-        """ sử dụng count để có thể tinh giá trị rồi delonebyone """
-        if len(self.lst) == 0:
-            # self.ui.displaycalculator.setText("0")
-            # self.count += 1
-            # self.lst += "0"
-            # self.sqr_sto += "0"
+        if self.lst[-1] == ")":
             pass
 
-        elif len(self.lst) > 0:
-            self.ui.displaycalculator.setText(text + "0")
-            self.count += 1
-            self.lst += "0"
-            self.sqr_sto += "0"
+        else:
+            if len(self.lst) == 0:
+                # self.ui.displaycalculator.setText("0")
+                # self.count += 1
+                # self.lst += "0"
+                # self.sqr_sto += "0"
+                pass
+
+            elif len(self.lst) > 0:
+                self.ui.displaycalculator.setText(text + "0")
+                self.count += 1
+                self.lst += "0"
+                self.sqr_sto += "0"
 
     def addnum(self):
         """ cũng giống 1 """
