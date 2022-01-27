@@ -250,23 +250,28 @@ class MyForm(QDialog):
     def num0(self):
 
         text = self.ui.displaycalculator.text()
+        slice_text = text.split(" ")
 
         if text[-1] == ")":
             pass
 
         else:
-            if len(self.lst) == 0:
-                # self.ui.displaycalculator.setText("0")
-                # self.count += 1
-                # self.lst += "0"
-                # self.sqr_sto += "0"
+            if slice_text[-1] == "":
                 pass
 
-            elif len(self.lst) > 0:
-                self.ui.displaycalculator.setText(text + "0")
-                self.count += 1
-                self.lst += "0"
-                self.sqr_sto += "0"
+            else:
+                if len(self.lst) == 0:
+                    # self.ui.displaycalculator.setText("0")
+                    # self.count += 1
+                    # self.lst += "0"
+                    # self.sqr_sto += "0"
+                    pass
+
+                elif len(self.lst) > 0:
+                    self.ui.displaycalculator.setText(text + "0")
+                    self.count += 1
+                    self.lst += "0"
+                    self.sqr_sto += "0"
 
     def addnum(self):
         text = self.ui.displaycalculator.text()
@@ -440,7 +445,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
                 or self.lst[-1] == "9") and self.lst[-1] != ".":
-                
+
                 self.ui.displaycalculator.setText(text + " / ")
                 self.count += 3
                 self.lst += " / "
@@ -629,7 +634,7 @@ class MyForm(QDialog):
                 or self.lst[-1] == "3" or self.lst[-1] == "4"
                 or self.lst[-1] == "5" or self.lst[-1] == "6"
                 or self.lst[-1] == "7" or self.lst[-1] == "8"
-                or self.lst[-1] == "9") and self.lst[-1] != ".":
+                or self.lst[-1] == "9" or self.lst[-1] == "0") and self.lst[-1] != ".":
 
                 self.ui.displaycalculator.setText(text + " * (")
                 self.count += 4
