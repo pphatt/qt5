@@ -26,7 +26,6 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = text.split(" ")
-                # print(slice_text)
 
                 for i in range(len(slice_text)):
 
@@ -111,9 +110,6 @@ class MyForm(QMainWindow):
                 result = "\n".join([str(i) for i in slice_text])
 
                 self.ui.output.setText(result)
-
-        # print(selection)
-        # print(type(selection))
 
 
 if __name__ == "__main__":
