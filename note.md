@@ -1,1 +1,0 @@
-BUG NOTE: 0 + NUMS..... I AM TOO LAZY TO FIX IT 
