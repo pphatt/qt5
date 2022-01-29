@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
+    <width>882</width>
     <height>600</height>
    </rect>
   </property>
@@ -58,7 +58,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>162</width>
+              <width>290</width>
               <height>22</height>
              </size>
             </property>
@@ -69,7 +69,12 @@
             </property>
             <item>
              <property name="text">
-              <string>Every words</string>
+              <string>Without special characters</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Every words (including special characters)</string>
              </property>
             </item>
            </widget>
@@ -114,7 +119,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>744</width>
+     <width>882</width>
      <height>21</height>
     </rect>
    </property>

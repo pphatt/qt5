@@ -20,7 +20,7 @@ class MyForm(QMainWindow):
         text_output = self.ui.output.clearHistory()
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
 
-        if selection == "Every words":
+        if selection == "Without special characters":
             if len(text) == 0:
                 pass
 
@@ -174,6 +174,28 @@ class MyForm(QMainWindow):
 
                 self.ui.output.setText(result)
 
+        if selection == "Every words (including special characters)":
+
+            if len(text) == 0:
+                pass
+
+            else:
+                slice_text = text.split(" ")
+                result = "\n".join([str(i) for i in slice_text])
+                self.ui.output.setText(result)
+
+        if selection == "Last word (per line)":
+
+            # if len(text) == 0:
+            #     pass
+            #
+            # else:
+            #     slice_text = text.split("\n")
+            pass
+
+        if selection == "Random line":
+            pass
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

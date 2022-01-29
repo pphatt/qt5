@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Dev\Python\Qt5\random.ui'
+# Form implementation generated from reading ui file 'D:\Dev\Python\Qt5\Random words Project\random.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(744, 600)
+        MainWindow.resize(882, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -47,11 +47,12 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.optionbox.sizePolicy().hasHeightForWidth())
         self.optionbox.setSizePolicy(sizePolicy)
-        self.optionbox.setMinimumSize(QtCore.QSize(162, 22))
+        self.optionbox.setMinimumSize(QtCore.QSize(290, 22))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.optionbox.setFont(font)
         self.optionbox.setObjectName("optionbox")
+        self.optionbox.addItem("")
         self.optionbox.addItem("")
         self.verticalLayout.addWidget(self.optionbox)
         self.convertbutton = QtWidgets.QPushButton(self.widget)
@@ -71,7 +72,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 744, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 882, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -84,7 +85,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.optionbox.setItemText(0, _translate("MainWindow", "Every words"))
+        self.optionbox.setItemText(0, _translate("MainWindow", "Without special characters"))
+        self.optionbox.setItemText(1, _translate("MainWindow", "Every words (including special characters)"))
         self.convertbutton.setText(_translate("MainWindow", "Convert"))
 
 
