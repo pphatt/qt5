@@ -29,83 +29,146 @@ class MyForm(QMainWindow):
 
                 for i in range(len(slice_text)):
 
-                    sto = ""
+                    for j in range(len(slice_text[i])):
 
-                    if "." in slice_text[i]:
+                        try:
+                            sto = ""
+                            a = slice_text[i][-1].isdigit()
+                            b = slice_text[i][-1].isalpha()
+                            while a is False and b is False:
+                                sto1 = ""
+                                sto1 += slice_text[i]
+                                slice_text.remove(slice_text[i])
+                                sto1 = sto1[:-1]
+                                slice_text.insert(i, sto1)
+                                a = slice_text[i][-1].isdigit()
+                                b = slice_text[i][-1].isalpha()
 
-                        if slice_text[i][-1] == ".":
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace(".", "")
-                            slice_text.insert(i, remove_thing)
+                            # sto += sto1
 
-                        else:
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace(".", "\n")
-                            slice_text.insert(i, remove_thing)
+                            if slice_text[i][j] == ".":
 
-                    elif "," in slice_text[i]:
+                                try:
+                                    check = slice_text[i][j + 1].isdigit()
+                                    check_alpha = slice_text[i][j + 1].isalpha()
 
-                        if slice_text[i][-1] == ",":
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace(",", "")
-                            slice_text.insert(i, remove_thing)
+                                    if check is True or check_alpha is True:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace(".", "\n", 1)
+                                        slice_text.insert(i, remove_thing)
 
-                        else:
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace(",", "\n")
-                            slice_text.insert(i, remove_thing)
+                                    elif check is False or check_alpha is False:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace(".", " ", 1)
+                                        slice_text.insert(i, remove_thing)
 
-                    elif "/" in slice_text[i]:
+                                # Try except the last special character(Ex: the dot ".") -> fixing the out of range
+                                except IndexError:
+                                    sto += slice_text[i]
+                                    slice_text.remove(slice_text[i])
+                                    remove_thing = sto.replace(".", " ", 1)
+                                    slice_text.insert(i, remove_thing)
 
-                        if slice_text[i][-1] == "/":
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("/", "")
-                            slice_text.insert(i, remove_thing)
+                            elif slice_text[i][j] == ",":
 
-                        else:
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("/", "\n")
-                            slice_text.insert(i, remove_thing)
+                                try:
+                                    check = slice_text[i][j + 1].isdigit()
+                                    check_alpha = slice_text[i][j + 1].isalpha()
 
-                    elif "[" in slice_text[i] and "]" in slice_text[i]:
-                        sto += slice_text[i]
-                        slice_text.remove(slice_text[i])
-                        remove_thing = ""
-                        slice_text.insert(i, remove_thing)
+                                    if check is True or check_alpha is True:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace(",", "\n", 1)
+                                        slice_text.insert(i, remove_thing)
 
-                    elif "[" in slice_text[i]:
+                                    elif check is False or check_alpha is False:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace(",", " ", 1)
+                                        slice_text.insert(i, remove_thing)
 
-                        if slice_text[i][-1] == "[":
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("[", "")
-                            slice_text.insert(i, remove_thing)
+                                except IndexError:
+                                    sto += slice_text[i]
+                                    slice_text.remove(slice_text[i])
+                                    remove_thing = sto.replace(",", " ", 1)
+                                    slice_text.insert(i, remove_thing)
 
-                        else:
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("[", "\n")
-                            slice_text.insert(i, remove_thing)
+                            elif slice_text[i][j] == "/":
 
-                    elif "]" in slice_text[i]:
+                                try:
+                                    check = slice_text[i][j + 1].isdigit()
+                                    check_alpha = slice_text[i][j + 1].isalpha()
 
-                        if slice_text[i][-1] == "]":
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("]", "")
-                            slice_text.insert(i, remove_thing)
+                                    if check is True or check_alpha is True:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("/", "\n", 1)
+                                        slice_text.insert(i, remove_thing)
 
-                        else:
-                            sto += slice_text[i]
-                            slice_text.remove(slice_text[i])
-                            remove_thing = sto.replace("]", "\n")
-                            slice_text.insert(i, remove_thing)
+                                    elif check is False or check_alpha is False:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("/", " ", 1)
+                                        slice_text.insert(i, remove_thing)
+
+                                except IndexError:
+                                    sto += slice_text[i]
+                                    slice_text.remove(slice_text[i])
+                                    remove_thing = sto.replace("/", " ", 1)
+                                    slice_text.insert(i, remove_thing)
+
+                            elif slice_text[i][j] == "[":
+
+                                try:
+                                    check = slice_text[i][j + 1].isdigit()
+                                    check_alpha = slice_text[i][j + 1].isalpha()
+
+                                    if check is True or check_alpha is True:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("[", "\n", 1)
+                                        slice_text.insert(i, remove_thing)
+
+                                    elif check is False or check_alpha is False:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("[", " ", 1)
+                                        slice_text.insert(i, remove_thing)
+
+                                except IndexError:
+                                    sto += slice_text[i]
+                                    slice_text.remove(slice_text[i])
+                                    remove_thing = sto.replace("[", " ", 1)
+                                    slice_text.insert(i, remove_thing)
+
+                            elif slice_text[i][j] == "]":
+
+                                try:
+                                    check = slice_text[i][j + 1].isdigit()
+                                    check_alpha = slice_text[i][j + 1].isalpha()
+
+                                    if check is True or check_alpha is True:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("]", "\n", 1)
+                                        slice_text.insert(i, remove_thing)
+
+                                    elif check is False or check_alpha is False:
+                                        sto += slice_text[i]
+                                        slice_text.remove(slice_text[i])
+                                        remove_thing = sto.replace("]", " ", 1)
+                                        slice_text.insert(i, remove_thing)
+
+                                except IndexError:
+                                    sto += slice_text[i]
+                                    slice_text.remove(slice_text[i])
+                                    remove_thing = sto.replace("]", " ", 1)
+                                    slice_text.insert(i, remove_thing)
+
+                        except IndexError:
+                            continue
 
                 result = "\n".join([str(i) for i in slice_text])
 
