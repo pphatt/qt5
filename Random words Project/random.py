@@ -54,6 +54,8 @@ class Ui_MainWindow(object):
         self.optionbox.setObjectName("optionbox")
         self.optionbox.addItem("")
         self.optionbox.addItem("")
+        self.optionbox.addItem("")
+        self.optionbox.addItem("")
         self.verticalLayout.addWidget(self.optionbox)
         self.convertbutton = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
@@ -87,6 +89,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.optionbox.setItemText(0, _translate("MainWindow", "Without special characters"))
         self.optionbox.setItemText(1, _translate("MainWindow", "Every words (including special characters)"))
+        self.optionbox.setItemText(2, _translate("MainWindow", "Last word (per line)"))
+        self.optionbox.setItemText(3, _translate("MainWindow", "Random line"))
         self.convertbutton.setText(_translate("MainWindow", "Convert"))
 
 

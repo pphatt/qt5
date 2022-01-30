@@ -77,6 +77,16 @@
               <string>Every words (including special characters)</string>
              </property>
             </item>
+            <item>
+             <property name="text">
+              <string>Last word (per line)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Random line</string>
+             </property>
+            </item>
            </widget>
           </item>
           <item>

@@ -14,18 +14,36 @@ class MyForm(QMainWindow):
         self.ui.optionbox.currentIndexChanged.connect(self.converting)
         self.show()
 
+    def dis_result(self, gap_for_join: str, sto):
+        result = f"{gap_for_join}".join([str(i) for i in sto])
+        return result
+
+    def split_thing(self, gap_for_split: str):
+        text = self.ui.userinput.toPlainText()
+        a = text.split(f"{gap_for_split}")
+        return a
+
+    def condition(self):
+        text = self.ui.userinput.toPlainText()
+
+        if len(text) == 0:
+            return True
+
+        else:
+            return False
+
     def converting(self):
 
-        text = self.ui.userinput.toPlainText()
-        text_output = self.ui.output.clearHistory()
+        # text = self.ui.userinput.toPlainText()
+        # text_output = self.ui.output.clearHistory()
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
 
         if selection == "Without special characters":
-            if len(text) == 0:
+            if self.condition() is True:
                 pass
 
             else:
-                slice_text = text.split(" ")
+                slice_text = self.split_thing(" ")
 
                 for i in range(len(slice_text)):
 
@@ -170,31 +188,49 @@ class MyForm(QMainWindow):
                         except IndexError:
                             continue
 
-                result = "\n".join([str(i) for i in slice_text])
+                result = self.dis_result("\n", slice_text)
 
                 self.ui.output.setText(result)
 
         if selection == "Every words (including special characters)":
 
-            if len(text) == 0:
+            if self.condition() is True:
                 pass
 
             else:
-                slice_text = text.split(" ")
-                result = "\n".join([str(i) for i in slice_text])
+                slice_text = self.split_thing(" ")
+                result = self.dis_result("\n", slice_text)
                 self.ui.output.setText(result)
 
         if selection == "Last word (per line)":
 
-            # if len(text) == 0:
-            #     pass
-            #
-            # else:
-            #     slice_text = text.split("\n")
-            pass
+            if self.condition() is True:
+                pass
+
+            else:
+                slice_text = self.split_thing("\n")
+
+                for i in range(len(slice_text)):
+                    slice_text_2 = slice_text[i].split(" ")
+                    slice_text.remove(slice_text[i])
+                    slice_text.insert(i, slice_text_2[-1])
+
+                result = self.dis_result("\n", slice_text)
+                self.ui.output.setText(result)
+
+            # pass
 
         if selection == "Random line":
-            pass
+
+            if self.condition() is True:
+                pass
+
+            else:
+                slice_text = self.split_thing("\n")
+                result = self.dis_result("\n", slice_text)
+                self.ui.output.setText(result)
+
+            # pass
         
 
 if __name__ == "__main__":
