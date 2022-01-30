@@ -211,7 +211,7 @@ class MyForm(QMainWindow):
                             continue
 
                 result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
+                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
                 self.ui.output.setText(result)
 
         if selection == "Every words (including special characters)":
@@ -222,7 +222,7 @@ class MyForm(QMainWindow):
             else:
                 slice_text = self.split_thing(" ")
                 result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
+                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
                 self.ui.output.setText(result)
 
         if selection == "Last word (per line)":
@@ -239,7 +239,7 @@ class MyForm(QMainWindow):
                     slice_text.insert(i, slice_text_2[-1])
 
                 result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
+                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
                 self.ui.output.setText(result)
 
             # pass
@@ -252,7 +252,7 @@ class MyForm(QMainWindow):
             else:
                 slice_text = self.split_thing("\n")
                 result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
+                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
                 self.ui.output.setText(result)
 
             # pass
