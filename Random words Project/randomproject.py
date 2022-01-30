@@ -1,5 +1,7 @@
 import sys
 
+from datetime import datetime
+
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from random import *
@@ -12,7 +14,13 @@ class MyForm(QMainWindow):
         self.ui.setupUi(self)
         self.ui.convertbutton.clicked.connect(self.converting)
         self.ui.optionbox.currentIndexChanged.connect(self.converting)
+        self.ui.tabWidget.setTabText(0, "Main")
+        self.ui.tabWidget.setTabText(1, "History")
+        self.ui.tabWidget.currentChanged.connect(self.tab_job)
         self.show()
+
+    get_day = datetime.now()
+    current_day = f"{get_day.day}-{get_day.month}-{get_day.year}"
 
     def dis_result(self, gap_for_join: str, sto):
         result = f"{gap_for_join}".join([str(i) for i in sto])
@@ -32,8 +40,22 @@ class MyForm(QMainWindow):
         else:
             return False
 
-    def converting(self):
+    def tab_job(self):
 
+        if self.ui.tabWidget.currentIndex() == 0:
+            pass
+
+        elif self.ui.tabWidget.currentIndex() == 1:
+            pass
+
+    def get_time(self):
+        time = QtCore.QTime.currentTime()
+        current_time = time.toString("hh:mm:ss")
+        current_time_line = f"{current_time} {self.current_day}"
+        return current_time_line
+
+    def converting(self):
+        # print(self.ui.tabWidget.currentIndex())
         # text = self.ui.userinput.toPlainText()
         # text_output = self.ui.output.clearHistory()
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
@@ -189,7 +211,7 @@ class MyForm(QMainWindow):
                             continue
 
                 result = self.dis_result("\n", slice_text)
-
+                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
                 self.ui.output.setText(result)
 
         if selection == "Every words (including special characters)":
@@ -200,6 +222,7 @@ class MyForm(QMainWindow):
             else:
                 slice_text = self.split_thing(" ")
                 result = self.dis_result("\n", slice_text)
+                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
                 self.ui.output.setText(result)
 
         if selection == "Last word (per line)":
@@ -216,6 +239,7 @@ class MyForm(QMainWindow):
                     slice_text.insert(i, slice_text_2[-1])
 
                 result = self.dis_result("\n", slice_text)
+                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
                 self.ui.output.setText(result)
 
             # pass
@@ -228,6 +252,7 @@ class MyForm(QMainWindow):
             else:
                 slice_text = self.split_thing("\n")
                 result = self.dis_result("\n", slice_text)
+                self.ui.listWidget.addItem(f"{result}\n{self.get_time()}")
                 self.ui.output.setText(result)
 
             # pass
