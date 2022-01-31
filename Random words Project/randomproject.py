@@ -4,7 +4,9 @@ from datetime import datetime
 
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
-from random import *
+from random1 import *
+
+import random
 
 
 class MyForm(QMainWindow):
@@ -14,6 +16,7 @@ class MyForm(QMainWindow):
         self.ui.setupUi(self)
         self.ui.convertbutton.clicked.connect(self.converting)
         self.ui.optionbox.currentIndexChanged.connect(self.converting)
+        self.ui.timesbox.currentIndexChanged.connect(self.converting)
         self.ui.tabWidget.setTabText(0, "Main")
         self.ui.tabWidget.setTabText(1, "History")
         self.ui.tabWidget.currentChanged.connect(self.tab_job)
@@ -22,11 +25,11 @@ class MyForm(QMainWindow):
     get_day = datetime.now()
     current_day = f"{get_day.day}-{get_day.month}-{get_day.year}"
 
-    def dis_result(self, gap_for_join: str, sto):
+    def dis_result(self, gap_for_join: str, sto: list[str]) -> str:
         result = f"{gap_for_join}".join([str(i) for i in sto])
         return result
 
-    def split_thing(self, gap_for_split: str):
+    def split_thing(self, gap_for_split: str) -> list[str]:
         text = self.ui.userinput.toPlainText()
         a = text.split(f"{gap_for_split}")
         return a
@@ -54,10 +57,23 @@ class MyForm(QMainWindow):
         current_time_line = f"{current_time} {self.current_day}"
         return current_time_line
 
+    def random_choice(self, times: int, thing: list[str]) -> list[str]:
+        choices = []
+
+        for i in range(times):
+            choices.append(random.choice(thing))
+
+        return choices
+
+    def fxing_split(self, thing1: str) -> list[str]:
+        thing2 = thing1.split("\n")
+        return thing2
+
     def converting(self):
         # print(self.ui.tabWidget.currentIndex())
         # text = self.ui.userinput.toPlainText()
         # text_output = self.ui.output.clearHistory()
+        timess = self.ui.timesbox.itemText(self.ui.timesbox.currentIndex())
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
 
         if selection == "Without special characters":
@@ -210,9 +226,49 @@ class MyForm(QMainWindow):
                         except IndexError:
                             continue
 
-                result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                self.ui.output.setText(result)
+                try:
+                    if timess == f"{self.ui.timesbox.currentText()}":
+                        sto101 = []
+
+                        # slice_text -> list[str] bc of the split build_in func
+                        for i in slice_text:
+                            if "\n" in i:
+                                split_for_random = self.fxing_split(i)
+                                for j in split_for_random:
+                                    sto101.append(j)
+                            else:
+                                sto101.append(i)
+
+                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto101)
+                        result = self.dis_result("\n", random_result)
+                        self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                        self.ui.output.setText(result)
+
+                except ValueError:
+                    sto102 = []
+
+                    for i in slice_text:
+                        if "\n" in i:
+                            split_for_random = self.fxing_split(i)
+                            for j in split_for_random:
+                                sto102.append(j)
+                        else:
+                            sto102.append(i)
+
+                    random_result = self.random_choice(len(sto102), sto102)
+                    result = self.dis_result("\n", random_result)
+                    self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                    self.ui.output.setText(result)
+
+                # Do not delete it
+                # Note for the previous version
+                #               |
+                #               |
+                #               |
+                #              \/
+                # result = self.dis_result("\n", slice_text)
+                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                # self.ui.output.setText(result)
 
         if selection == "Every words (including special characters)":
 

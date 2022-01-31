@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Dev\Python\Qt5\Random words Project\random.ui'
+# Form implementation generated from reading ui file 'D:\Dev\Python\Qt5\Random words Project\random1.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(916, 856)
+        MainWindow.resize(916, 855)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -73,6 +73,13 @@ class Ui_MainWindow(object):
         self.optionbox.addItem("")
         self.optionbox.addItem("")
         self.verticalLayout.addWidget(self.optionbox)
+        self.timesbox = QtWidgets.QComboBox(self.widget)
+        self.timesbox.setObjectName("timesbox")
+        self.timesbox.addItem("")
+        self.timesbox.addItem("")
+        self.timesbox.addItem("")
+        self.timesbox.addItem("")
+        self.verticalLayout.addWidget(self.timesbox)
         self.convertbutton = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -128,6 +135,10 @@ class Ui_MainWindow(object):
         self.optionbox.setItemText(1, _translate("MainWindow", "Every words (including special characters)"))
         self.optionbox.setItemText(2, _translate("MainWindow", "Last word (per line)"))
         self.optionbox.setItemText(3, _translate("MainWindow", "Random line"))
+        self.timesbox.setItemText(0, _translate("MainWindow", "1"))
+        self.timesbox.setItemText(1, _translate("MainWindow", "2"))
+        self.timesbox.setItemText(2, _translate("MainWindow", "3"))
+        self.timesbox.setItemText(3, _translate("MainWindow", "All"))
         self.convertbutton.setText(_translate("MainWindow", "Convert"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Tab 1"))
         self.groupBox_2.setTitle(_translate("MainWindow", "History"))
