@@ -241,7 +241,8 @@ class MyForm(QMainWindow):
 
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto101)
                         result = self.dis_result("\n", random_result)
-                        self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                        self.ui.listWidget.addItem(
+                            f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
                         self.ui.output.setText(result)
 
                 except ValueError:
@@ -257,7 +258,8 @@ class MyForm(QMainWindow):
 
                     random_result = self.random_choice(len(sto102), sto102)
                     result = self.dis_result("\n", random_result)
-                    self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                    self.ui.listWidget.addItem(
+                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
                     self.ui.output.setText(result)
 
                 # Do not delete it
@@ -277,9 +279,44 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing(" ")
-                result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                self.ui.output.setText(result)
+                # result = self.dis_result("\n", slice_text)
+                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                # self.ui.output.setText(result)
+
+                try:
+                    if timess == f"{self.ui.timesbox.currentText()}":
+                        sto103 = []
+
+                        for i in slice_text:
+                            if "\n" in i:
+                                split_for_random = self.fxing_split(i)
+                                for j in split_for_random:
+                                    sto103.append(j)
+                            else:
+                                sto103.append(i)
+
+                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto103)
+                        result = self.dis_result("\n", random_result)
+                        self.ui.listWidget.addItem(
+                            f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        self.ui.output.setText(result)
+
+                except ValueError:
+                    sto104 = []
+
+                    for i in slice_text:
+                        if "\n" in i:
+                            split_for_random = self.fxing_split(i)
+                            for j in split_for_random:
+                                sto104.append(j)
+                        else:
+                            sto104.append(i)
+
+                    random_result = self.random_choice(len(sto104), sto104)
+                    result = self.dis_result("\n", random_result)
+                    self.ui.listWidget.addItem(
+                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                    self.ui.output.setText(result)
 
         if selection == "Last word (per line)":
 
@@ -294,9 +331,44 @@ class MyForm(QMainWindow):
                     slice_text.remove(slice_text[i])
                     slice_text.insert(i, slice_text_2[-1])
 
-                result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                self.ui.output.setText(result)
+                # result = self.dis_result("\n", slice_text)
+                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                # self.ui.output.setText(result)
+
+                try:
+                    if timess == f"{self.ui.timesbox.currentText()}":
+                        sto105 = []
+
+                        for i in slice_text:
+                            if "\n" in i:
+                                split_for_random = self.fxing_split(i)
+                                for j in split_for_random:
+                                    sto105.append(j)
+                            else:
+                                sto105.append(i)
+
+                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
+                        result = self.dis_result("\n", random_result)
+                        self.ui.listWidget.addItem(
+                            f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        self.ui.output.setText(result)
+
+                except ValueError:
+                    sto106 = []
+
+                    for i in slice_text:
+                        if "\n" in i:
+                            split_for_random = self.fxing_split(i)
+                            for j in split_for_random:
+                                sto106.append(j)
+                        else:
+                            sto106.append(i)
+
+                    random_result = self.random_choice(len(sto106), sto106)
+                    result = self.dis_result("\n", random_result)
+                    self.ui.listWidget.addItem(
+                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                    self.ui.output.setText(result)
 
             # pass
 
@@ -307,12 +379,47 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing("\n")
-                result = self.dis_result("\n", slice_text)
-                self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                self.ui.output.setText(result)
+                # result = self.dis_result("\n", slice_text)
+                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
+                # self.ui.output.setText(result)
+
+                try:
+                    if timess == f"{self.ui.timesbox.currentText()}":
+                        sto105 = []
+
+                        for i in slice_text:
+                            if "\n" in i:
+                                split_for_random = self.fxing_split(i)
+                                for j in split_for_random:
+                                    sto105.append(j)
+                            else:
+                                sto105.append(i)
+
+                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
+                        result = self.dis_result("\n", random_result)
+                        self.ui.listWidget.addItem(
+                            f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        self.ui.output.setText(result)
+
+                except ValueError:
+                    sto106 = []
+
+                    for i in slice_text:
+                        if "\n" in i:
+                            split_for_random = self.fxing_split(i)
+                            for j in split_for_random:
+                                sto106.append(j)
+                        else:
+                            sto106.append(i)
+
+                    random_result = self.random_choice(len(sto106), sto106)
+                    result = self.dis_result("\n", random_result)
+                    self.ui.listWidget.addItem(
+                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                    self.ui.output.setText(result)
 
             # pass
-        
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
