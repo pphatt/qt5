@@ -17,6 +17,7 @@ class MyForm(QMainWindow):
         self.ui.convertbutton.clicked.connect(self.converting)
         self.ui.optionbox.currentIndexChanged.connect(self.converting)
         self.ui.timesbox.currentIndexChanged.connect(self.converting)
+        self.ui.userinput.textChanged.connect(self.adding_choice)
         self.ui.tabWidget.setTabText(0, "Main")
         self.ui.tabWidget.setTabText(1, "History")
         self.ui.tabWidget.currentChanged.connect(self.tab_job)
@@ -68,6 +69,22 @@ class MyForm(QMainWindow):
     def fxing_split(self, thing1: str) -> list[str]:
         thing2 = thing1.split("\n")
         return thing2
+
+    def adding_choice(self):
+        text = self.ui.userinput.toPlainText()
+        text1 = text.split("\n")
+        nums = self.ui.timesbox.count()
+
+        if len(text1) >= nums:
+
+            if len(text1) == 1:
+                self.ui.timesbox.addItem("1")
+
+            else:
+                self.ui.timesbox.addItem(f"{len(text1)}")
+
+        # print(len(text1))
+        # print(nums)
 
     def converting(self):
         # print(self.ui.tabWidget.currentIndex())
