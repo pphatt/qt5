@@ -15,8 +15,8 @@ class MyForm(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.convertbutton.clicked.connect(self.converting)
-        self.ui.optionbox.currentIndexChanged.connect(self.converting)
-        self.ui.timesbox.currentIndexChanged.connect(self.converting)
+        self.ui.optionbox.currentIndexChanged.connect(self.adding_choice)
+        # self.ui.timesbox.currentIndexChanged.connect(self.converting)
         self.ui.userinput.textChanged.connect(self.adding_choice)
         self.ui.tabWidget.setTabText(0, "Main")
         self.ui.tabWidget.setTabText(1, "History")
@@ -25,6 +25,11 @@ class MyForm(QMainWindow):
 
     get_day = datetime.now()
     current_day = f"{get_day.day}-{get_day.month}-{get_day.year}"
+
+    count2 = "wsc"
+
+    count101 = 0
+    count102 = 0
 
     def dis_result(self, gap_for_join: str, sto: list[str]) -> str:
         result = f"{gap_for_join}".join([str(i) for i in sto])
@@ -70,26 +75,171 @@ class MyForm(QMainWindow):
         thing2 = thing1.split("\n")
         return thing2
 
-    def adding_choice(self):
-        text = self.ui.userinput.toPlainText()
-        text1 = text.split("\n")
-        nums = self.ui.timesbox.count()
+    def checking(self, thingy1: list[str]) -> list[str]:
 
-        if len(text1) >= nums:
+        sto111 = []
 
-            if len(text1) == 1:
-                self.ui.timesbox.addItem("1")
+        for i in range(len(thingy1)):
+
+            if thingy1[i] == "":
+                continue
 
             else:
+                sto111.append(thingy1[i])
+
+        return sto111
+
+    def adding_choice(self):
+        selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
+        self.ui.userinput.setUndoRedoEnabled(False)
+        text = self.ui.userinput.toPlainText()
+
+        text1 = [j for i in text.split(" ") for j in i.split("\n")]
+        nums = self.ui.timesbox.count()
+
+        space_count = text1.count("")
+        for i in range(space_count):
+            text1.remove("")
+
+        if len(text1) < self.count101:
+            pass
+
+        else:
+            self.count101 = len(text1)
+
+        if selection == "Without special characters":
+
+            if self.count2 != "wsc":
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+                self.ui.userinput.selectAll()
+                self.ui.userinput.cut()
+                self.ui.output.clear()
+
+                self.count2 = ""
+                self.count2 += "wsc"
+
+            if len(text1) == nums:
                 self.ui.timesbox.addItem(f"{len(text1)}")
 
-        # print(len(text1))
-        # print(nums)
+            elif len(text1) == 0:
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+            elif len(text1) < self.count101:
+
+                a = self.count101 - len(text1)
+
+                for i in range(a + 1):
+                    self.ui.timesbox.removeItem(self.count101 - i + 1)
+
+                self.count101 = len(text1)
+
+        elif selection == "Every words (including special characters)":
+
+            if self.count2 != "ew":
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+                self.ui.userinput.selectAll()
+                self.ui.userinput.cut()
+                self.ui.output.clear()
+
+                self.count2 = ""
+                self.count2 = "ew"
+
+            if len(text1) == nums:
+                self.ui.timesbox.addItem(f"{len(text1)}")
+
+            elif len(text1) == 0:
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+            elif len(text1) < self.count101:
+
+                a = self.count101 - len(text1)
+
+                for i in range(a + 1):
+                    self.ui.timesbox.removeItem(self.count101 - i + 1)
+
+                self.count101 = len(text1)
+
+        elif selection == "Last word (per line)":
+
+            if self.count2 != "lw":
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+                self.ui.userinput.selectAll()
+                self.ui.userinput.cut()
+                self.ui.output.clear()
+
+                self.count2 = ""
+                self.count2 += "lw"
+
+            text2 = text.split("\n")
+
+            space_count1 = text2.count("")
+            for i in range(space_count1):
+                text2.remove("")
+
+            if len(text2) < self.count102:
+                pass
+
+            else:
+                self.count102 = len(text2)
+
+            if len(text2) == nums:
+                self.ui.timesbox.addItem(f"{len(text2)}")
+
+            elif len(text2) < self.count102:
+
+                a = self.count102 - len(text2)
+
+                for i in range(a + 1):
+                    self.ui.timesbox.removeItem(self.count102 - i + 1)
+
+                self.count102 = len(text2)
+
+        elif selection == "Random line":
+
+            if self.count2 != "rl":
+                self.ui.timesbox.clear()
+                self.ui.timesbox.addItem("All")
+
+                self.ui.userinput.selectAll()
+                self.ui.userinput.cut()
+                self.ui.output.clear()
+
+                self.count2 = ""
+                self.count2 += "rl"
+
+            text2 = text.split("\n")
+
+            space_count1 = text2.count("")
+            for i in range(space_count1):
+                text2.remove("")
+
+            if len(text2) < self.count102:
+                pass
+
+            else:
+                self.count102 = len(text2)
+
+            if len(text2) == nums:
+                self.ui.timesbox.addItem(f"{len(text2)}")
+
+            elif len(text2) < self.count102:
+
+                a = self.count102 - len(text2)
+
+                for i in range(a + 1):
+                    self.ui.timesbox.removeItem(self.count102 - i + 1)
+
+                self.count102 = len(text2)
 
     def converting(self):
-        # print(self.ui.tabWidget.currentIndex())
-        # text = self.ui.userinput.toPlainText()
-        # text_output = self.ui.output.clearHistory()
         timess = self.ui.timesbox.itemText(self.ui.timesbox.currentIndex())
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
 
@@ -99,6 +249,11 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing(" ")
+
+                count = slice_text.count("")
+
+                for i in range(count):
+                    slice_text.remove("")
 
                 for i in range(len(slice_text)):
 
@@ -116,8 +271,6 @@ class MyForm(QMainWindow):
                                 slice_text.insert(i, sto1)
                                 a = slice_text[i][-1].isdigit()
                                 b = slice_text[i][-1].isalpha()
-
-                            # sto += sto1
 
                             if slice_text[i][j] == ".":
 
@@ -296,9 +449,11 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing(" ")
-                # result = self.dis_result("\n", slice_text)
-                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                # self.ui.output.setText(result)
+
+                count = slice_text.count("")
+
+                for i in range(count):
+                    slice_text.remove("")
 
                 try:
                     if timess == f"{self.ui.timesbox.currentText()}":
@@ -342,6 +497,11 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing("\n")
+
+                count = slice_text.count("")
+
+                for i in range(count):
+                    slice_text.remove("")
 
                 for i in range(len(slice_text)):
                     slice_text_2 = slice_text[i].split(" ")
@@ -396,9 +556,11 @@ class MyForm(QMainWindow):
 
             else:
                 slice_text = self.split_thing("\n")
-                # result = self.dis_result("\n", slice_text)
-                # self.ui.listWidget.addItem(f"{result}\n{selection} ({self.get_time()})")
-                # self.ui.output.setText(result)
+
+                count = slice_text.count("")
+
+                for i in range(count):
+                    slice_text.remove("")
 
                 try:
                     if timess == f"{self.ui.timesbox.currentText()}":
