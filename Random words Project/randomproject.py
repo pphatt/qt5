@@ -449,19 +449,38 @@ class MyForm(QMainWindow):
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto101)
                         result = self.dis_result("\n", random_result)
 
+                        string_count = 0
+                        for i in range(11):
+                            string_count += len(random_result[i])
+
                         if [result] == self.slot_check[-1]:
                             pass
 
                         else:
-                            if len(random_result) > 10:
-                                self.ui.listWidget.addItem(
-                                    f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                            if len(random_result) > 11:
+
+                                quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                                 self.ui.listWidget.addItem(
-                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                    f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                                count_items = self.ui.listWidget.count()
-                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+                                if 40 < len(random_result):
+                                    string_count_2 = 0
+                                    for i in range(41):
+                                        string_count_2 += len(random_result[i])
+
+                                    self.ui.listWidget.addItem(
+                                        f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                                else:
+                                    self.ui.listWidget.addItem(
+                                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                             else:
                                 self.ui.listWidget.addItem(
@@ -491,19 +510,38 @@ class MyForm(QMainWindow):
                     random_result = self.random_choice(len(sto102), sto102)
                     result = self.dis_result("\n", random_result)
 
+                    string_count = 0
+                    for i in range(11):
+                        string_count += len(random_result[i])
+
                     if [result] == self.slot_check[-1]:
                         pass
 
                     else:
-                        if len(random_result) > 10:
-                            self.ui.listWidget.addItem(
-                                f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        if len(random_result) > 11:
+
+                            quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                             self.ui.listWidget.addItem(
-                                f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                            count_items = self.ui.listWidget.count()
-                            self.ui.listWidget.setRowHidden(count_items - 1, True)
+                            if 40 < len(random_result):
+                                string_count_2 = 0
+                                for i in range(41):
+                                    string_count_2 += len(random_result[i])
+
+                                self.ui.listWidget.addItem(
+                                    f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                            else:
+                                self.ui.listWidget.addItem(
+                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                         else:
                             self.ui.listWidget.addItem(
@@ -557,19 +595,38 @@ class MyForm(QMainWindow):
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto103)
                         result = self.dis_result("\n", random_result)
 
+                        string_count = 0
+                        for i in range(11):
+                            string_count += len(random_result[i])
+
                         if [result] == self.slot_check[-1]:
                             pass
 
                         else:
-                            if len(random_result) > 10:
-                                self.ui.listWidget.addItem(
-                                    f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                            if len(random_result) > 11:
+
+                                quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                                 self.ui.listWidget.addItem(
-                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                    f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                                count_items = self.ui.listWidget.count()
-                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+                                if 40 < len(random_result):
+                                    string_count_2 = 0
+                                    for i in range(41):
+                                        string_count_2 += len(random_result[i])
+
+                                    self.ui.listWidget.addItem(
+                                        f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                                else:
+                                    self.ui.listWidget.addItem(
+                                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                             else:
                                 self.ui.listWidget.addItem(
@@ -599,19 +656,38 @@ class MyForm(QMainWindow):
                     random_result = self.random_choice(len(sto104), sto104)
                     result = self.dis_result("\n", random_result)
 
+                    string_count = 0
+                    for i in range(11):
+                        string_count += len(random_result[i])
+
                     if [result] == self.slot_check[-1]:
                         pass
 
                     else:
-                        if len(random_result) > 10:
-                            self.ui.listWidget.addItem(
-                                f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        if len(random_result) > 11:
+
+                            quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                             self.ui.listWidget.addItem(
-                                f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                            count_items = self.ui.listWidget.count()
-                            self.ui.listWidget.setRowHidden(count_items - 1, True)
+                            if 40 < len(random_result):
+                                string_count_2 = 0
+                                for i in range(41):
+                                    string_count_2 += len(random_result[i])
+
+                                self.ui.listWidget.addItem(
+                                    f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                            else:
+                                self.ui.listWidget.addItem(
+                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                         else:
                             self.ui.listWidget.addItem(
@@ -660,19 +736,38 @@ class MyForm(QMainWindow):
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
                         result = self.dis_result("\n", random_result)
 
+                        string_count = 0
+                        for i in range(11):
+                            string_count += len(random_result[i])
+
                         if [result] == self.slot_check[-1]:
                             pass
 
                         else:
-                            if len(random_result) > 10:
-                                self.ui.listWidget.addItem(
-                                    f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                            if len(random_result) > 11:
+
+                                quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                                 self.ui.listWidget.addItem(
-                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                    f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                                count_items = self.ui.listWidget.count()
-                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+                                if 40 < len(random_result):
+                                    string_count_2 = 0
+                                    for i in range(41):
+                                        string_count_2 += len(random_result[i])
+
+                                    self.ui.listWidget.addItem(
+                                        f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                                else:
+                                    self.ui.listWidget.addItem(
+                                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                             else:
                                 self.ui.listWidget.addItem(
@@ -702,19 +797,38 @@ class MyForm(QMainWindow):
                     random_result = self.random_choice(len(sto106), sto106)
                     result = self.dis_result("\n", random_result)
 
+                    string_count = 0
+                    for i in range(11):
+                        string_count += len(random_result[i])
+
                     if [result] == self.slot_check[-1]:
                         pass
 
                     else:
-                        if len(random_result) > 10:
-                            self.ui.listWidget.addItem(
-                                f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        if len(random_result) > 11:
+
+                            quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                             self.ui.listWidget.addItem(
-                                f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                            count_items = self.ui.listWidget.count()
-                            self.ui.listWidget.setRowHidden(count_items - 1, True)
+                            if 40 < len(random_result):
+                                string_count_2 = 0
+                                for i in range(41):
+                                    string_count_2 += len(random_result[i])
+
+                                self.ui.listWidget.addItem(
+                                    f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                            else:
+                                self.ui.listWidget.addItem(
+                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                         else:
                             self.ui.listWidget.addItem(
@@ -760,19 +874,38 @@ class MyForm(QMainWindow):
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
                         result = self.dis_result("\n", random_result)
 
+                        string_count = 0
+                        for i in range(11):
+                            string_count += len(random_result[i])
+
                         if [result] == self.slot_check[-1]:
                             pass
 
                         else:
-                            if len(random_result) > 10:
-                                self.ui.listWidget.addItem(
-                                    f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                            if len(random_result) > 11:
+
+                                quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                                 self.ui.listWidget.addItem(
-                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                    f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                                count_items = self.ui.listWidget.count()
-                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+                                if 40 < len(random_result):
+                                    string_count_2 = 0
+                                    for i in range(41):
+                                        string_count_2 += len(random_result[i])
+
+                                    self.ui.listWidget.addItem(
+                                        f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                                else:
+                                    self.ui.listWidget.addItem(
+                                        f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                    count_items = self.ui.listWidget.count()
+                                    self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                             else:
                                 self.ui.listWidget.addItem(
@@ -802,19 +935,38 @@ class MyForm(QMainWindow):
                     random_result = self.random_choice(len(sto106), sto106)
                     result = self.dis_result("\n", random_result)
 
+                    string_count = 0
+                    for i in range(11):
+                        string_count += len(random_result[i])
+
                     if [result] == self.slot_check[-1]:
                         pass
 
                     else:
-                        if len(random_result) > 10:
-                            self.ui.listWidget.addItem(
-                                f"{result[:20]}\nEXTEND\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                        if len(random_result) > 11:
+
+                            quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
 
                             self.ui.listWidget.addItem(
-                                f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+                                f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
 
-                            count_items = self.ui.listWidget.count()
-                            self.ui.listWidget.setRowHidden(count_items - 1, True)
+                            if 40 < len(random_result):
+                                string_count_2 = 0
+                                for i in range(41):
+                                    string_count_2 += len(random_result[i])
+
+                                self.ui.listWidget.addItem(
+                                    f"{result[:(string_count_2 + 40)]}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
+
+                            else:
+                                self.ui.listWidget.addItem(
+                                    f"{result}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
+
+                                count_items = self.ui.listWidget.count()
+                                self.ui.listWidget.setRowHidden(count_items - 1, True)
 
                         else:
                             self.ui.listWidget.addItem(
