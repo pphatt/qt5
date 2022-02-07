@@ -872,6 +872,7 @@ class MyForm(QMainWindow):
                                 sto105.append(i)
 
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
+                        output_result = self.dis_result("\n\n", random_result)
                         result = self.dis_result("\n", random_result)
 
                         string_count = 0
@@ -919,7 +920,7 @@ class MyForm(QMainWindow):
 
                             self.slot_check.append([result])
 
-                        self.ui.output.setText(result)
+                        self.ui.output.setText(output_result)
 
                 except ValueError:
                     sto106 = []
@@ -933,6 +934,7 @@ class MyForm(QMainWindow):
                             sto106.append(i)
 
                     random_result = self.random_choice(len(sto106), sto106)
+                    output_result = self.dis_result("\n\n", random_result)
                     result = self.dis_result("\n", random_result)
 
                     string_count = 0
@@ -980,7 +982,7 @@ class MyForm(QMainWindow):
 
                         self.slot_check.append([result])
 
-                    self.ui.output.setText(result)
+                    self.ui.output.setText(output_result)
 
             # pass
 
