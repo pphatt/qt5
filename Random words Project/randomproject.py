@@ -987,6 +987,14 @@ class MyForm(QMainWindow):
             # pass
 
 
+"""
+Note (I am too lazy to do these update so .... Whoever can do it, just do a pull request or folk the project):
+- We can make the delete button for history. Both delete one by one or delete all
+- Changing UI for better
+- Changing the history display when there are more than 40 answers
+- Maybe, there are more options that are not here so..... like I said it above. Goodluck !  
+"""
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MyForm()
