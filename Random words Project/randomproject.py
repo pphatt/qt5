@@ -276,6 +276,14 @@ class MyForm(QMainWindow):
             self.ui.listWidget.setRowHidden(a, True)
             self.ui.listWidget.setRowHidden(a - 1, False)
 
+    def debug_result_blankspace(self, input_string: list[str]) -> list[str]:
+
+        count_items = input_string.count("")
+        for i in range(count_items):
+            input_string.remove("")
+
+        return input_string
+
     def converting(self):
         timess = self.ui.timesbox.itemText(self.ui.timesbox.currentIndex())
         selection = self.ui.optionbox.itemText(self.ui.optionbox.currentIndex())
@@ -446,12 +454,14 @@ class MyForm(QMainWindow):
                             else:
                                 sto101.append(i)
 
+                        self.debug_result_blankspace(sto101)
+
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto101)
                         result = self.dis_result("\n", random_result)
 
-                        string_count = 0
-                        for i in range(11):
-                            string_count += len(random_result[i])
+                        # string_count = 0
+                        # for i in range(11):
+                        #     string_count += len(random_result[i])
 
                         if [result] == self.slot_check[-1]:
                             pass
@@ -460,6 +470,10 @@ class MyForm(QMainWindow):
                             if len(random_result) > 11:
 
                                 quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                                string_count = 0
+                                for i in range(11):
+                                    string_count += len(random_result[i])
 
                                 self.ui.listWidget.addItem(
                                     f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -507,12 +521,14 @@ class MyForm(QMainWindow):
                         else:
                             sto102.append(i)
 
+                    self.debug_result_blankspace(sto102)
+
                     random_result = self.random_choice(len(sto102), sto102)
                     result = self.dis_result("\n", random_result)
 
-                    string_count = 0
-                    for i in range(11):
-                        string_count += len(random_result[i])
+                    # string_count = 0
+                    # for i in range(11):
+                    #     string_count += len(random_result[i])
 
                     if [result] == self.slot_check[-1]:
                         pass
@@ -521,6 +537,10 @@ class MyForm(QMainWindow):
                         if len(random_result) > 11:
 
                             quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                            string_count = 0
+                            for i in range(11):
+                                string_count += len(random_result[i])
 
                             self.ui.listWidget.addItem(
                                 f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -592,12 +612,14 @@ class MyForm(QMainWindow):
                             else:
                                 sto103.append(i)
 
+                        self.debug_result_blankspace(sto103)
+
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto103)
                         result = self.dis_result("\n", random_result)
 
-                        string_count = 0
-                        for i in range(11):
-                            string_count += len(random_result[i])
+                        # string_count = 0
+                        # for i in range(11):
+                        #     string_count += len(random_result[i])
 
                         if [result] == self.slot_check[-1]:
                             pass
@@ -606,6 +628,10 @@ class MyForm(QMainWindow):
                             if len(random_result) > 11:
 
                                 quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                                string_count = 0
+                                for i in range(11):
+                                    string_count += len(random_result[i])
 
                                 self.ui.listWidget.addItem(
                                     f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -653,12 +679,14 @@ class MyForm(QMainWindow):
                         else:
                             sto104.append(i)
 
+                    self.debug_result_blankspace(sto104)
+
                     random_result = self.random_choice(len(sto104), sto104)
                     result = self.dis_result("\n", random_result)
 
-                    string_count = 0
-                    for i in range(11):
-                        string_count += len(random_result[i])
+                    # string_count = 0
+                    # for i in range(11):
+                    #     string_count += len(random_result[i])
 
                     if [result] == self.slot_check[-1]:
                         pass
@@ -667,6 +695,10 @@ class MyForm(QMainWindow):
                         if len(random_result) > 11:
 
                             quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                            string_count = 0
+                            for i in range(11):
+                                string_count += len(random_result[i])
 
                             self.ui.listWidget.addItem(
                                 f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -733,12 +765,14 @@ class MyForm(QMainWindow):
                             else:
                                 sto105.append(i)
 
+                        self.debug_result_blankspace(sto105)
+
                         random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
                         result = self.dis_result("\n", random_result)
 
-                        string_count = 0
-                        for i in range(11):
-                            string_count += len(random_result[i])
+                        # string_count = 0
+                        # for i in range(11):
+                        #     string_count += len(random_result[i])
 
                         if [result] == self.slot_check[-1]:
                             pass
@@ -747,6 +781,10 @@ class MyForm(QMainWindow):
                             if len(random_result) > 11:
 
                                 quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                                string_count = 0
+                                for i in range(11):
+                                    string_count += len(random_result[i])
 
                                 self.ui.listWidget.addItem(
                                     f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -794,12 +832,14 @@ class MyForm(QMainWindow):
                         else:
                             sto106.append(i)
 
+                    self.debug_result_blankspace(sto106)
+
                     random_result = self.random_choice(len(sto106), sto106)
                     result = self.dis_result("\n", random_result)
 
-                    string_count = 0
-                    for i in range(11):
-                        string_count += len(random_result[i])
+                    # string_count = 0
+                    # for i in range(11):
+                    #     string_count += len(random_result[i])
 
                     if [result] == self.slot_check[-1]:
                         pass
@@ -808,6 +848,10 @@ class MyForm(QMainWindow):
                         if len(random_result) > 11:
 
                             quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                            string_count = 0
+                            for i in range(11):
+                                string_count += len(random_result[i])
 
                             self.ui.listWidget.addItem(
                                 f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -861,23 +905,25 @@ class MyForm(QMainWindow):
 
                 try:
                     if timess == f"{self.ui.timesbox.currentText()}":
-                        sto105 = []
+                        sto107 = []
 
                         for i in slice_text:
                             if "\n" in i:
                                 split_for_random = self.fxing_split(i)
                                 for j in split_for_random:
-                                    sto105.append(j)
+                                    sto107.append(j)
                             else:
-                                sto105.append(i)
+                                sto107.append(i)
 
-                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto105)
+                        self.debug_result_blankspace(sto107)
+
+                        random_result = self.random_choice(int(self.ui.timesbox.currentText()), sto107)
                         output_result = self.dis_result("\n\n", random_result)
                         result = self.dis_result("\n", random_result)
 
-                        string_count = 0
-                        for i in range(11):
-                            string_count += len(random_result[i])
+                        # string_count = 0
+                        # for i in range(11):
+                        #     string_count += len(random_result[i])
 
                         if [result] == self.slot_check[-1]:
                             pass
@@ -886,6 +932,10 @@ class MyForm(QMainWindow):
                             if len(random_result) > 11:
 
                                 quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                                string_count = 0
+                                for i in range(11):
+                                    string_count += len(random_result[i])
 
                                 self.ui.listWidget.addItem(
                                     f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -923,23 +973,25 @@ class MyForm(QMainWindow):
                         self.ui.output.setText(output_result)
 
                 except ValueError:
-                    sto106 = []
+                    sto108 = []
 
                     for i in slice_text:
                         if "\n" in i:
                             split_for_random = self.fxing_split(i)
                             for j in split_for_random:
-                                sto106.append(j)
+                                sto108.append(j)
                         else:
-                            sto106.append(i)
+                            sto108.append(i)
 
-                    random_result = self.random_choice(len(sto106), sto106)
+                    self.debug_result_blankspace(sto108)
+
+                    random_result = self.random_choice(len(sto108), sto108)
                     output_result = self.dis_result("\n\n", random_result)
                     result = self.dis_result("\n", random_result)
 
-                    string_count = 0
-                    for i in range(11):
-                        string_count += len(random_result[i])
+                    # string_count = 0
+                    # for i in range(11):
+                    #     string_count += len(random_result[i])
 
                     if [result] == self.slot_check[-1]:
                         pass
@@ -948,6 +1000,10 @@ class MyForm(QMainWindow):
                         if len(random_result) > 11:
 
                             quote = f"EXTEND FOR MORE INFORMATION -> REMAND {len(random_result) - 11}"
+
+                            string_count = 0
+                            for i in range(11):
+                                string_count += len(random_result[i])
 
                             self.ui.listWidget.addItem(
                                 f"{result[:(string_count + 10)]}\n{quote}\n{selection} ({self.ui.timesbox.currentText()}) ({self.get_time()})")
@@ -988,12 +1044,6 @@ class MyForm(QMainWindow):
 
 
 """
-.........................................................
-.........................................................
-Note (a very big bug. Maybe ?):
-- the range for(11) is bugging -> list index of out range
-.........................................................
-.........................................................
 Note (I am too lazy to do these update so .... Whoever can do it, just do a pull request or folk the project):
 - We can make the delete button for history. Both delete one by one or delete all
 - Changing UI for better
